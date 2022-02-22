@@ -13,6 +13,5 @@ jobs:
         run: git clone --branch master https://github.com/yue/muban.git
         
       - name: build
-        shell: cmd
-        run: cd muban && npm run download && cmake -S. -Bout -G "Visual Studio 16 2019" -A "x64" && npm run dist && dir
+        run: cd muban && npm install && npm run dist && dir
         
