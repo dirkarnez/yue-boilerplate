@@ -1,0 +1,15 @@
+name: yue-boilerplate-actions-workflow
+on: push
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: windows-latest
+    steps:
+      - name: git clone SFML
+        run: git clone --branch master https://github.com/yue/muban.git
+        
+      - name: build
+        shell: cmd
+        run: cd muban && npm install && npm run dist && dir
+        
