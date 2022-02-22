@@ -6,7 +6,10 @@ jobs:
     name: Create Release
     runs-on: windows-latest
     steps:
-      - name: git clone SFML
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        
+      - name: git clone
         run: git clone --branch master https://github.com/yue/muban.git
         
       - name: build
